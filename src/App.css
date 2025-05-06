@@ -1,0 +1,103 @@
+/* 保留透视，但去掉 margin，让 flex 来居中 */
+.scene {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 250px;
+  height: 400px;
+  transform: translate(-50%, -50%);
+  perspective: 1000px;
+}
+
+/* 卡片主体：金色边框 + 金色脉冲光晕 */
+.card {
+  transform-style: preserve-3d;
+
+  position: relative;
+  overflow: hidden;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+
+  width: 100%;
+  height: 100%;
+
+  /* 金色背景渐变（可选） */
+  background: linear-gradient(145deg, #f9d976, #f39f28);
+  /* 金色边框 */
+  border: 0.5px solid #ffd700;
+  border-radius: 16px;
+
+  transition: transform 0.1s ease-out;
+  transform-style: preserve-3d;
+
+  /* 金色 glow 动画 */
+  animation: glow 2s ease-in-out infinite alternate;
+}
+
+.card,
+.card * {
+  backface-visibility: hidden;
+}
+
+/* 金色脉冲光晕 */
+@keyframes glow {
+  from {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2),
+      /* 原始阴影 */ 0 0 10px rgba(255, 215, 0, 0.5); /* 金色柔和光起始 */
+  }
+  to {
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2), 0 0 30px rgba(255, 215, 0, 1); /* 金色柔和光最强 */
+  }
+}
+
+/* 斜向高光伪元素也改为金色调 */
+.card::before {
+  content: "";
+  position: absolute;
+  top: -50%;
+  left: -50%;
+  width: 200%;
+  height: 200%;
+  background: radial-gradient(
+    circle at center,
+    rgba(255, 215, 0, 0.2) 0%,
+    rgba(255, 215, 0, 0) 60%
+  );
+  opacity: 0.4;
+  transform: rotate(45deg) translate(-100%, -100%);
+  pointer-events: none;
+  animation: sparkle 3s linear infinite;
+}
+
+@keyframes sparkle {
+  0% {
+    transform: rotate(45deg) translate(-100%, -100%);
+  }
+  50% {
+    transform: rotate(45deg) translate(100%, 100%);
+  }
+  100% {
+    transform: rotate(45deg) translate(-100%, -100%);
+  }
+}
+
+/* 卡片内容底部半透明黑底（不动） */
+.card-content {
+  background-color: rgba(0, 0, 0, 0.4);
+  width: 100%;
+  margin-top: auto;
+}
+
+.card-content h2 {
+  font-size: 2rem;
+  color: white;
+}
+
+.card-content p {
+  font-size: 1rem;
+  color: white;
+}
