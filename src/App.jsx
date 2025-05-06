@@ -1,3 +1,4 @@
+import React from "react";
 import FloatingCard from "./components/FloatingCard";
 
 function App() {
