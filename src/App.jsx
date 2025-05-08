@@ -1,6 +1,6 @@
 import React from "react";
 import FloatingCard from "./components/FloatingCard";
-import VideoGallery from "./components/VideoGallery";
+import VideoCarousel from "./components/VideoCarousel";
 
 function App() {
   return (
@@ -10,7 +10,10 @@ function App() {
         <p>Artist, Web developer</p>
       </FloatingCard>
       <div>
-        <VideoGallery />
+        <VideoCarousel />
+      </div>
+      <div>
+        <p>hihihi hihihi hihihi</p>
       </div>
     </div>
   );
