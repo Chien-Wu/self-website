@@ -7,7 +7,6 @@ export default function FloatingCard({ children }) {
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef(null);
 
-  // 鼠标倾斜逻辑，只改 .card 的 transform
   const handleMouseMove = (e) => {
     const card = cardRef.current;
     const { left, top, width, height } = card.getBoundingClientRect();
@@ -24,7 +23,6 @@ export default function FloatingCard({ children }) {
     cardRef.current.style.transform = "";
   };
 
-  // 翻转状态切换
   const toggleFlip = () => {
     setFlipped((f) => !f);
   };
@@ -38,7 +36,7 @@ export default function FloatingCard({ children }) {
         onMouseLeave={handleMouseLeave}
       >
         <div className={`card-inner${flipped ? " flipped" : ""}`}>
-          {/* 正面 */}
+          {/* front */}
           <div
             className="card-face card-front"
             style={{
@@ -52,7 +50,7 @@ export default function FloatingCard({ children }) {
               <button onClick={toggleFlip}>More Info →</button>
             </div>
           </div>
-          {/* 背面 */}
+          {/* back */}
           <div className="card-face card-back">
             <div className="card-content">
               <h2>Back Side</h2>

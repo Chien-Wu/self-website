@@ -12,6 +12,8 @@ import video4 from "../assets/blenders/4.mp4";
 import thumb4 from "../assets/blenders/4.jpeg";
 import video5 from "../assets/blenders/5.mp4";
 import thumb5 from "../assets/blenders/5.jpeg";
+import video6 from "../assets/blenders/6.mp4";
+import thumb6 from "../assets/blenders/6.jpeg";
 
 const videos = [
   { src: video1, poster: thumb1, title: "Tennis" },
@@ -19,6 +21,7 @@ const videos = [
   { src: video3, poster: thumb3, title: "Poker" },
   { src: video4, poster: thumb4, title: "Travel" },
   { src: video5, poster: thumb5, title: "Clock" },
+  { src: video6, poster: thumb6, title: "Head" },
 ];
 
 export default function VideoGallery() {
@@ -30,7 +33,7 @@ export default function VideoGallery() {
             src={src}
             poster={poster}
             controls
-            preload="none" /* 避免一次性全部加载 */
+            preload="none"
             width="100%"
             height="auto"
           />
