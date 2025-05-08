@@ -1,5 +1,6 @@
 import React, { useRef, useState } from "react";
 import "../App.css";
+import "../components/FloatingCard.css";
 import heroImg from "../assets/Mountain.jpeg";
 
 export default function FloatingCard({ children }) {
