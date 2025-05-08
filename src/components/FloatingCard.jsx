@@ -48,7 +48,7 @@ export default function FloatingCard({ children }) {
           >
             <div className="card-content">
               {children}
-              <button onClick={toggleFlip}>Flip</button>
+              <button onClick={toggleFlip}>More Info →</button>
             </div>
           </div>
           {/* 背面 */}
