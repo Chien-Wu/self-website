@@ -1,9 +1,10 @@
+// src/components/FloatingCard.jsx
 import React, { useRef, useState } from "react";
 import "../App.css";
-import "../components/FloatingCard.css";
+import "./FloatingCard.css";
 import heroImg from "../assets/Mountain.jpeg";
 
-export default function FloatingCard({ children }) {
+export default function FloatingCard({ children, backContent }) {
   const [flipped, setFlipped] = useState(false);
   const cardRef = useRef(null);
 
@@ -23,9 +24,7 @@ export default function FloatingCard({ children }) {
     cardRef.current.style.transform = "";
   };
 
-  const toggleFlip = () => {
-    setFlipped((f) => !f);
-  };
+  const toggleFlip = () => setFlipped((f) => !f);
 
   return (
     <div className="scene">
@@ -36,7 +35,7 @@ export default function FloatingCard({ children }) {
         onMouseLeave={handleMouseLeave}
       >
         <div className={`card-inner${flipped ? " flipped" : ""}`}>
-          {/* front */}
+          {/* Front Side */}
           <div
             className="card-face card-front"
             style={{
@@ -50,12 +49,11 @@ export default function FloatingCard({ children }) {
               <button onClick={toggleFlip}>More Info →</button>
             </div>
           </div>
-          {/* back */}
+          {/* Back Side */}
           <div className="card-face card-back">
             <div className="card-content">
-              <h2>Back Side</h2>
-              <p>This is the back of the card.</p>
-              <button onClick={toggleFlip}>Flip</button>
+              {backContent}
+              <button onClick={toggleFlip}>← Back</button>
             </div>
           </div>
         </div>

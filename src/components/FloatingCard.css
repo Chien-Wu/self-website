@@ -60,6 +60,7 @@
   background: #333;
   color: #fff;
   transform: rotateY(180deg);
+  font-family: "Courier New", Courier, monospace;
 }
 
 .card-content {
@@ -68,6 +69,7 @@
   background-color: rgba(0, 0, 0, 0.4);
   text-align: center;
   margin-top: auto;
+  color: #fff;
 }
 
 .card-content h2,

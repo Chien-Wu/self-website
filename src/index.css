@@ -1,14 +1,11 @@
-html,
-body,
-#root {
-  display: flex;
-  align-items: center;
-  justify-content: center;
+/* 1. 全局 CSS 变量：只放在 :root */
+:root {
+  /* 字体族 */
   --font-family-sans: "Helvetica Neue", Arial, sans-serif;
   --font-family-serif: "Times New Roman", serif;
   --font-family-mono: "SFMono-Regular", Menlo, monospace;
 
-  /* 文字尺寸（基于 16px 根字号） */
+  /* 字号刻度 */
   --font-size-xs: 0.75rem; /* 12px */
   --font-size-sm: 0.875rem; /* 14px */
   --font-size-base: 1rem; /* 16px */
@@ -17,10 +14,28 @@ body,
   --line-height: 1.5;
 }
 
-body {
+.typewriter {
+  font-family: "Special Elite", monospace;
+  letter-spacing: 0.05em;
+  line-height: 1.4;
+}
+
+html,
+body,
+#root {
+  height: 100%;
   margin: 0;
-  background-color: rgb(15, 29, 53);
+}
+
+/* 3. 在 body（或 #root）上做 Flex 居中 */
+body {
   display: flex;
   align-items: center;
   justify-content: center;
+
+  background-color: rgb(15, 29, 53);
+  color: #fff; /* 全局文字颜色，可选 */
+  font-family: var(--font-family-sans);
+  line-height: var(--line-height);
+  font-size: var(--font-size-base);
 }
