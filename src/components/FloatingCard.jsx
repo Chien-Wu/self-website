@@ -53,7 +53,7 @@ export default function FloatingCard({ children, backContent }) {
           <div className="card-face card-back">
             <div className="card-content">
               {backContent}
-              <button onClick={toggleFlip}>← Back</button>
+              <button onClick={toggleFlip}>Back →</button>
             </div>
           </div>
         </div>

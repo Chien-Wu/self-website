@@ -57,7 +57,7 @@
 }
 
 .card-back {
-  background: white;
+  background: black;
   color: #fff;
   transform: rotateY(180deg);
   font-family: "Courier New", Courier, monospace;
@@ -79,7 +79,7 @@
 }
 
 .card-back .card-content a {
-  color: black;
+  color: white;
   text-decoration: none;
   cursor: pointer;
   transition: color 0.2s ease;
