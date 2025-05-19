@@ -57,7 +57,7 @@
 }
 
 .card-back {
-  background: #333;
+  background: white;
   color: #fff;
   transform: rotateY(180deg);
   font-family: "Courier New", Courier, monospace;
@@ -75,7 +75,20 @@
 .card-content h2,
 .card-content p {
   margin: 8px;
-  color: #fff;
+  color: white;
+}
+
+.card-back .card-content a {
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
+  transition: color 0.2s ease;
+}
+
+/* 悬停时高亮并加下划线 */
+.card-back .card-content a:hover {
+  opacity: 0.5;
+  text-decoration: underline;
 }
 
 .card-content button {

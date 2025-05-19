@@ -3,10 +3,12 @@ import React from "react";
 import FloatingCard from "./components/FloatingCard";
 import VideoCarousel from "./components/VideoCarousel";
 import "./App.css";
+import AgeInTenThousand from "./components/AgeInTenThousand";
 
 function App() {
   return (
     <div>
+      <AgeInTenThousand />
       <FloatingCard
         backContent={
           <>
