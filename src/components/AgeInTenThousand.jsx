@@ -29,11 +29,8 @@ export default function AgeInTenThousand() {
       }
 
       if (raw !== undefined) {
-        // 拆分整数和小数部分
         const [intPart, fracPart] = raw.split(".");
-        // 整数部分前补零到 10 位
         const paddedInt = intPart.padStart(10, "0");
-        // 重新拼接
         text = `${paddedInt}.${fracPart}${hover ? " ETD" : ""}`;
       }
 
